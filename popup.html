@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sustainability Insights</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <div class="header">
+      <h1>Sustainability Insights</h1>
+      <p>Make eco-conscious shopping choices</p>
+    </div>
+
+    <!-- Content -->
+    <div class="content">
+      <!-- Loading State -->
+      <div id="loading" class="loading">
+        <div class="spinner"></div>
+        <span>Loading sustainability data...</span>
+      </div>
+
+      <!-- Main Content (hidden initially) -->
+      <div id="main-content" style="display: none;">
+        
+        <!-- Current Product Score -->
+        <div class="section">
+          <h2 class="section-title">Product Impact Score</h2>
+          <div class="score-container">
+            <div id="score-badge" class="score-badge">
+              <span id="score-text">Loading...</span>
+            </div>
+            <div class="score-details">
+              <p id="score-reasoning">Analyzing sustainability factors...</p>
+            </div>
+            <div class="score-factors">
+              <div class="factor">
+                <div class="factor-label">Environmental</div>
+                <div class="factor-score" id="env-score">--</div>
+              </div>
+              <div class="factor">
+                <div class="factor-label">Social</div>
+                <div class="factor-score" id="social-score">--</div>
+              </div>
+              <div class="factor">
+                <div class="factor-label">Governance</div>
+                <div class="factor-score" id="gov-score">--</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Better Alternatives -->
+        <div class="section">
+          <h2 class="section-title">Better Options</h2>
+          <div id="alternatives-list" class="alternatives-list">
+            <!-- Alternatives will be populated by JavaScript -->
+          </div>
+        </div>
+
+        <!-- Rewards Section -->
+        <div class="section">
+          <h2 class="section-title">Get Rewards</h2>
+          <div id="reward-card" class="reward-card">
+            <div class="reward-title" id="reward-title">Loading rewards...</div>
+            <div class="reward-description" id="reward-description">Please wait...</div>
+            <div class="reward-code" id="reward-code">----</div>
+            <button class="btn btn-success btn-block" id="copy-code-btn">
+              Copy Code
+            </button>
+          </div>
+        </div>
+
+        <!-- Impact Stats -->
+        <div class="section">
+          <h2 class="section-title">Your Impact</h2>
+          <div class="impact-stats">
+            <div class="impact-stat">
+              <div class="impact-value" id="co2-saved">0 kg</div>
+              <div class="impact-label">CO₂ Saved</div>
+            </div>
+            <div class="impact-stat">
+              <div class="impact-value" id="water-saved">0 L</div>
+              <div class="impact-label">Water Saved</div>
+            </div>
+            <div class="impact-stat">
+              <div class="impact-value" id="plastic-reduced">0 g</div>
+              <div class="impact-label">Plastic Reduced</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="section">
+          <button class="btn btn-primary btn-block" id="learn-more-btn">
+            Learn More About Sustainability
+          </button>
+          <button class="btn btn-secondary btn-block mt-2" id="settings-btn">
+            Extension Settings
+          </button>
+        </div>
+
+      </div>
+
+      <!-- Error State -->
+      <div id="error-content" style="display: none;">
+        <div class="section text-center">
+          <h2>Unable to Load Data</h2>
+          <p class="text-muted mb-3">
+            We couldn't analyze this page for sustainability insights.
+          </p>
+          <button class="btn btn-primary" id="retry-btn">
+            Try Again
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
